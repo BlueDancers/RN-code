@@ -9,6 +9,8 @@ import FlatListPage from './pages/FlatListPage'
 import SectionListPage from './pages/SectionListPage'
 import NetworkPage from './pages/NetworkPage'
 import MoveDemo from './pages/MoveDemo'
+import ComponentsAndApi from './pages/ComponentsAndApi'
+import AndroiAndApi from './pages/AndroiAndApi'
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -24,7 +26,11 @@ export default class App extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <MoveDemo />
+        <Text>1</Text>
+        <AndroiAndApi />
+        {/* 快速生成 rncs */}
+        {/* <ComponentsAndApi /> */}
+        {/* <MoveDemo /> */}
         {/* <NetworkPage /> */}
         {/* <SectionListPage /> */}
         {/* <FlatListPage /> */}
