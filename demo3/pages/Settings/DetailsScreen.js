@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
 
-export default class ProfileScreen extends Component {
+export default class DetailsScreen extends Component {
   static navigationOptions = {
-    title: 'ProfileScreen'
+    title: '列表',
+    tabBarVisible: true
   }
   render() {
     return (
-      <View>
-        <Text> 2 </Text>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Details!</Text>
       </View>
     )
   }
