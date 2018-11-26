@@ -5,13 +5,22 @@ export default class ProfileScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     console.log(navigationOptions)
     return {
-      title: navigation.getParam('otherParam'),
+      headerTitle: navigation.getParam('otherParam'),
+      headerRight: (
+        <Button
+          title="按钮"
+          onPress={() => navigation.navigate('MyModal')}
+          color="#f4511e"
+          backgroundColor="#f4511e"
+        />
+      ),
       headerStyle: {
         backgroundColor: navigationOptions.headerTintColor
       },
       headerTintColor: navigationOptions.headerStyle.backgroundColor
     }
   }
+  static tabBarVisible = false
   render() {
     const { params } = this.props.navigation.state
     console.log(params)
@@ -19,9 +28,6 @@ export default class ProfileScreen extends Component {
     const otherParam = params ? params.otherParam : null
     return (
       <View>
-
-        <StatusBar barStyle='light-content' barStyle="black" />
-
         <Text> {JSON.stringify(itemId)} </Text>
         <Text>当前标题:{JSON.stringify(otherParam)}</Text>
         <Button

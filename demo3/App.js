@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Text, View } from 'react-native'
-import Base from './navigation/Base'
+import Base from './App/navigation/Base'
 
 export default class App extends React.Component {
   render() {
@@ -8,4 +7,3 @@ export default class App extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({})
