@@ -1,5 +1,20 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, TouchableOpacity, Button } from 'react-native'
+import ImagePicker from 'react-native-image-picker'
+var options = {
+  //底部弹出框选项
+  title: '请选择',
+  cancelButtonTitle: '取消',
+  takePhotoButtonTitle: '拍照',
+  chooseFromLibraryButtonTitle: '选择相册',
+  quality: 0.75,
+  allowsEditing: true,
+  noData: false,
+  storageOptions: {
+    skipBackup: true,
+    path: 'images'
+  }
+}
 
 export default class OtherTwo extends Component {
   render() {
@@ -13,8 +28,36 @@ export default class OtherTwo extends Component {
         >
           <Text>跳转到One页面</Text>
         </TouchableOpacity>
+        <Button
+          title="设置头像"
+          onPress={() => {
+            this.cameraAction()
+          }}
+        />
       </View>
     )
+  }
+  cameraAction = () => {
+    ImagePicker.showImagePicker(options, response => {
+      console.log('Response = ', response) // 图片的回调信息
+
+      if (response.didCancel) {
+        console.log('User cancelled image picker')
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error)
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton)
+      } else {
+        const source = { uri: response.uri }
+
+        // You can also display the image using data:
+        // const source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+        this.setState({
+          avatarSource: source
+        })
+      }
+    })
   }
 }
 

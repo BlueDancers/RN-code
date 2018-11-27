@@ -91,7 +91,7 @@ export default class Channel extends Component {
               <View key={index} style={styles.listItem}>
                 {item.map((i, x) => {
                   return (
-                    <View key={i}>
+                    <View key={x}>
                       <Image style={styles.ListsImg} source={i.img} />
                       <Text style={styles.ListText}>{i.text}</Text>
                     </View>
