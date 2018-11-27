@@ -9,19 +9,9 @@ import {
   KeyboardAvoidingView
 } from 'react-native'
 import Header from './Component/Header'
-class Logotitle extends Component {
-  render() {
-    return <Text style={{ color: 'white', fontSize: 20 }}>新的标题</Text>
-  }
-}
+
 
 export default class HomeScreen extends Component {
-  static navigationOptions = () => {
-    return {
-      header: null,
-      tabBarVisible: false
-    }
-  }
   render() {
     return (
       <KeyboardAvoidingView style={styles.containers} behavior="padding">
@@ -32,9 +22,9 @@ export default class HomeScreen extends Component {
           // translucent={true} //设置沉浸式状态栏
         />
         <Header />
-        <View style={styles.views}></View>
+        <View style={styles.views} />
         <Button
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           title="go to two"
           onPress={() =>
             this.props.navigation.navigate('Profile', {

@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, Button, StatusBar } from 'react-native'
 
 export default class ProfileScreen extends Component {
-  static navigationOptions = ({ navigation, navigationOptions }) => {
-    console.log(navigationOptions)
+  static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: navigation.getParam('otherParam'),
       headerRight: (
         <Button
           title="按钮"
@@ -14,10 +12,6 @@ export default class ProfileScreen extends Component {
           backgroundColor="#f4511e"
         />
       ),
-      headerStyle: {
-        backgroundColor: navigationOptions.headerTintColor
-      },
-      headerTintColor: navigationOptions.headerStyle.backgroundColor
     }
   }
   static tabBarVisible = false
