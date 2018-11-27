@@ -1,4 +1,4 @@
-import BottomTabNavigator from '../BottomTab'
+import BottomTabNavigator from './BottomTab'
 import ProfileScreen from '../../pages/Home/navigator/ProfileScreen'
 import ModalScreen from '../../pages/Home/ModalScreen'
 import DetailsScreen from '../../pages/Settings/DetailsScreen'

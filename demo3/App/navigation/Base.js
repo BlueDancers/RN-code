@@ -1,5 +1,4 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation'
-import BottomTabNavigator from './Router/BottomTab'
 import RouterConfig from './Router/RouterConfig'
 
 const HomeStack = createStackNavigator(RouterConfig, {
