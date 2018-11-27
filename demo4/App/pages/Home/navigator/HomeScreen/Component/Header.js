@@ -8,24 +8,12 @@ export default class Header extends Component {
       <View style={styles.containers}>
         <View style={styles.left}>
           <AntDesign name={'scan1'} size={25} color={'white'} />
-          <Text style={styles.qrcode} onPress={() => {
-            this.props.navigation.navigate('Profile')
-          }}>扫一扫</Text>
+          <Text style={styles.qrcode}>扫一扫</Text>
         </View>
         <View style={styles.center}>
-          <SimpleLineIcons
-            style={styles.InputLeftImg}
-            name={'magnifier'}
-            size={18}
-            color={'#AFA9A8'}
-          />
+          <SimpleLineIcons style={styles.InputLeftImg} name={'magnifier'} size={18} color={'#AFA9A8'} />
           <TextInput style={styles.input} />
-          <SimpleLineIcons
-            style={styles.InputRightImg}
-            name={'camera'}
-            size={18}
-            color={'#AFA9A8'}
-          />
+          <SimpleLineIcons style={styles.InputRightImg} name={'camera'} size={18} color={'#AFA9A8'} />
         </View>
         <View style={styles.right}>
           <AntDesign name={'qrcode'} size={25} color={'white'} />
@@ -57,14 +45,14 @@ const styles = StyleSheet.create({
   },
   InputLeftImg: {
     position: 'absolute',
-    top: 16,
-    left: 10,
+    top:16,
+    left:10,
     zIndex: 10
   },
   InputRightImg: {
-    position: 'absolute',
-    top: 16,
-    right: 10,
+    position:'absolute',
+    top:16,
+    right:10,
     zIndex: 10
   },
   input: {

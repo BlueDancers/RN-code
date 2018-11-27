@@ -3,7 +3,7 @@ import ProfileScreen from '../../pages/Home/navigator/ProfileScreen'
 import ModalScreen from '../../pages/Home/ModalScreen'
 import DetailsScreen from '../../pages/Settings/DetailsScreen'
 import OtherTwo from '../../pages/Other/OtherTwo'
-import RNCamera from '../../pages/common/RNCamera '
+
 export default {
   BottomTab: {
     screen: BottomTabNavigator,
@@ -15,12 +15,6 @@ export default {
     screen: ModalScreen,
     navigationOptions: () => ({
       header: null // 隐藏标题栏
-    })
-  },
-  RNCamera: {
-    sereen: RNCamera,
-    navigationOptions: () => ({
-      header: null
     })
   },
   Profile: {
