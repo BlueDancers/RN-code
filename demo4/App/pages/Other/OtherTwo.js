@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, TouchableOpacity, Button } from 'react-native'
 import ImagePicker from 'react-native-image-picker'
+import ImagePickerPlus from 'react-native-image-crop-picker'
+
 var options = {
   //底部弹出框选项
   title: '请选择',
@@ -29,9 +31,21 @@ export default class OtherTwo extends Component {
           <Text>跳转到One页面</Text>
         </TouchableOpacity>
         <Button
-          title="设置头像"
+          title="添加图片"
           onPress={() => {
             this.cameraAction()
+          }}
+        />
+        <Button
+          title="可以裁剪的添加图片"
+          onPress={() => {
+            this.camerActions()
+          }}
+        />
+        <Button
+          title="选取多张图片"
+          onPress={() => {
+            this.camerAllActions()
           }}
         />
       </View>
@@ -57,6 +71,23 @@ export default class OtherTwo extends Component {
           avatarSource: source
         })
       }
+    })
+  }
+  camerActions = () => {
+    ImagePickerPlus.openPicker({
+      width: 300,
+      height: 410,
+      cropping: true
+    }).then(image => {
+      console.log(image)
+    })
+  }
+  camerAllActions = () => {
+    ImagePickerPlus.openPicker({
+      hideBottomControls: false,
+      multiple: true
+    }).then(images => {
+      console.log(images)
     })
   }
 }
