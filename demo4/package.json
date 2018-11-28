@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.6.1",
     "react-native": "0.57.5",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera",
     "react-native-gesture-handler": "^1.0.9",
     "react-native-image-crop-picker": "^0.21.3",
     "react-native-image-picker": "^0.27.1",

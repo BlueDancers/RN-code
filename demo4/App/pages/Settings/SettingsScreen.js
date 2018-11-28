@@ -8,17 +8,12 @@ export default class SettingsScreen extends Component {
     }
   }
   render() {
+    let { navigate } = this.props.navigation
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-        <Button
-          title="Go to Home"
-          onPress={() => this.props.navigation.navigate('Home')}
-        />
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
+        <Text>第二页面</Text>
+        <Button title="Go to Home" onPress={() => navigate('Home')} />
+        <Button title="Go to Details" onPress={() => navigate('Details')} />
       </View>
     )
   }
