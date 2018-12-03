@@ -1,39 +1,50 @@
 import { createBottomTabNavigator } from 'react-navigation'
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 import React from 'react'
 import navigator from './TopTab/HomeRouter'
 import SettingsStack from './TopTab/SettingsRouter'
 import OtherStack from './TopTab/OtherRouter'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-export default createBottomTabNavigator(
+export default createMaterialBottomTabNavigator(
   {
-    首页: { screen: navigator },
-    设置: { screen: SettingsStack },
-    其他: { screen: OtherStack }
+    navigator: {
+      screen: navigator,
+      navigationOptions: {
+        tabBarLabel: '首页', // 页面名称
+        tabBarIcon: ({ tintColor }) => ( // 页面图标
+          <Ionicons name="ios-home" color={tintColor} size={24} />
+        ),
+        tabBarColor:'#3472EE' // 页面背景色
+      }
+    },
+    SettingsStack: {
+      screen: SettingsStack,
+      navigationOptions: {
+        tabBarLabel: '设置',
+        tabBarIcon: ({ tintColor }) => (
+          <Ionicons name="ios-options" color={tintColor} size={24} />
+        ),
+        tabBarColor:'#EC3E3E'
+      }
+    },
+    OtherStack: {
+      screen: OtherStack,
+      navigationOptions: {
+        tabBarLabel: '其他',
+        tabBarIcon: ({ tintColor }) => (
+          <Ionicons name="ios-chatbubbles" color={tintColor} size={24} />
+        ),
+        tabBarColor:'#0EA748'
+      }
+    }
   },
   {
-    // 目前用于图标的显示设置
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor }) => {
-        console.log(navigation.state)
-        const { routeName } = navigation.state
-        let iconName
-        if (routeName === '首页') {
-          iconName = `ios-home`
-        } else if (routeName === '设置') {
-          iconName = `ios-options`
-        } else if (routeName === '其他') {
-          iconName = `ios-chatbubbles`
-        }
-        // 通常使用react-native-vector-icons中的图标组件
-        return <Ionicons name={iconName} size={25} color={tintColor} />
-      }
-    }),
-    //底部标签的样式设置
-    tabBarOptions: {
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
-      showIcon: true
-    }
+    initialRouteName: 'navigator', // 初始化页面
+    activeColor: '#FFFFFF', // 选中的菜单颜色
+    inactiveColor: '#CEC9C8', // 非选中的菜单颜色
+    barStyle: { backgroundColor: 'white' }, // 底部导航栏样式
+    shifting: true
+    //labeled: false // 当为false的时候只显示图标
   }
 )
