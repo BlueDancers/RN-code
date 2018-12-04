@@ -1,48 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import { createStackNavigator, createNavigationContainer } from 'react-navigation'
+import RouterConfig  from './RouterConfig'
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>欢迎来到 RN</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+const HomeStack = createStackNavigator(RouterConfig, {
+  mode: 'card ',
+  headerMode: 'float', // none 隐藏上标签栏  | float 苹果默认效果 | screen 安卓默认效果
+  defaultNavigationOptions: {
+    gesturesEnabled: true,
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff', // 定义导航条的字体颜色 会覆盖headerTitleStyle的颜色
+    
+    headerTitleStyle: {
+      fontWeight: 'bold'
+    }
   }
-}
+})
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+export default createNavigationContainer(HomeStack)
