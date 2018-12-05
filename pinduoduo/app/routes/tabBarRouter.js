@@ -14,7 +14,7 @@ import Personal from '../src/tabBar/Personal'
 export default createMaterialBottomTabNavigator(
   {
     Home: {
-      screen: Home,
+      screen: Home, // 配置底部组件信息
       navigationOptions: {
         tabBarLabel: '首页',
         tabBarIcon: (

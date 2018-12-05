@@ -7,13 +7,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "immutable": "^4.0.0-rc.12",
     "react": "16.6.1",
     "react-native": "0.57.7",
     "react-native-gesture-handler": "^1.0.10",
     "react-native-paper": "^2.2.8",
     "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.4",
-    "react-navigation-material-bottom-tabs": "^1.0.0"
+    "react-navigation-material-bottom-tabs": "^1.0.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

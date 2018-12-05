@@ -11,9 +11,9 @@ import Shoe from '../../src/home/Shoe/Shoe'
 export default createMaterialTopTabNavigator(
   {
     Popular: {
-      screen: Popular,
+      screen: Popular, // 配置页面
       navigationOptions: {
-        tabBarLabel: '热门'
+        tabBarLabel: '热门' // 头部标签名称
       }
     },
     Store: {
@@ -70,12 +70,14 @@ export default createMaterialTopTabNavigator(
     lazy: true,
     tabBarOptions: {
       scrollEnabled: true,
-      upperCaseLabel: false, // 不大写
+      upperCaseLabel: false, // 是否大写
       activeTintColor: 'white', // 活动选项卡
       inactiveTintColor: 'white', // "非活动" 选项卡
-      tabStyle : { // 选项卡样式
+      tabStyle: {
+        // 选项卡样式
         width: 60,
-      },  
+        paddingTop: 20
+      },
       style: {
         backgroundColor: 'red' // 头部导航栏样式
       },

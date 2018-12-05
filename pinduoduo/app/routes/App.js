@@ -1,10 +1,10 @@
-import { createStackNavigator, createNavigationContainer } from 'react-navigation'
+import { createStackNavigator, createAppContainer } from 'react-navigation'
 import RouterConfig  from './RouterConfig'
 
 
 const HomeStack = createStackNavigator(RouterConfig, {
   mode: 'card ',
-  headerMode: 'float', // none 隐藏上标签栏  | float 苹果默认效果 | screen 安卓默认效果
+  headerMode: 'screen', // none 隐藏上标签栏  | float 苹果默认效果 | screen 安卓默认效果
   defaultNavigationOptions: {
     gesturesEnabled: true,
     headerStyle: {
@@ -18,4 +18,4 @@ const HomeStack = createStackNavigator(RouterConfig, {
   }
 })
 
-export default createNavigationContainer(HomeStack)
+export default createAppContainer(HomeStack)
