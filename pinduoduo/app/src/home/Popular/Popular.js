@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {
-  Text,
-  StyleSheet,
-  View,
-  StatusBar,
-  Button
-} from 'react-native'
+import { Text, StyleSheet, View, StatusBar, Button } from 'react-native'
 import { change } from '../../../store/actionCreators'
 class Popular extends Component {
   render() {
@@ -33,7 +27,7 @@ class Popular extends Component {
 const styles = StyleSheet.create({})
 
 const mapState = state => ({
-  data: state.get('data')
+  data: state.homePopular.get('data')
 })
 
 const mapDispatch = dispatch => ({

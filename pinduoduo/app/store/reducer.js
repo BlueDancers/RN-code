@@ -1,12 +1,8 @@
-import actionTypes from './actionTypes'
-import {fromJS} from 'immutable'
-const defaultState = fromJS({
-  data: 'my is redux!!!!'
-})
+import { combineReducers } from 'redux'
+import { reducer as homePopular } from '../src/home/Popular/store/index'
 
-export default (state = defaultState, action) => {
-  if (action.type == actionTypes.CHANGE) {
-    return state.set('data','change Redux!!!')
-  }
-  return state
-}
+
+
+export default combineReducers ({
+  homePopular: homePopular
+})

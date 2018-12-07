@@ -1,5 +1,5 @@
-import { createStore } from 'redux'
 import reducer from './reducer'
+import actionCreators from './actionCreators'
+import actionTypes from './actionTypes'
 
-
-export default createStore(reducer)
+export { reducer, actionCreators, actionTypes }
