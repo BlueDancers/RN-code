@@ -76,7 +76,8 @@ export default createMaterialTopTabNavigator(
       tabStyle: {
         // 选项卡样式
         width: 60,
-        paddingTop: 20
+        paddingTop: 35,
+        paddingBottom: 4
       },
       style: {
         backgroundColor: 'red' // 头部导航栏样式

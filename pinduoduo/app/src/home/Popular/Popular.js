@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Text, StyleSheet, View, StatusBar, Button } from 'react-native'
+// import SplashScreen from 'rn-splash-screen'
 import { change } from '../../../store/actionCreators'
 class Popular extends Component {
+  constructor() {
+    super()
+    // SplashScreen.hide()
+  }
   render() {
     return (
       <View>
