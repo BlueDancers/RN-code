@@ -6,10 +6,11 @@ import SplashScreen from 'react-native-splash-screen'
 import store from './app/store'
 import App from './app/routes/App'
 import { name } from './app.json'
+// import './app/mock/home'
 
 class Apps extends Component {
-  componentWillMount () {
-    SplashScreen.hide();
+  componentWillMount() {
+    SplashScreen.hide()
   }
   render() {
     return (
@@ -19,5 +20,4 @@ class Apps extends Component {
     )
   }
 }
-
 AppRegistry.registerComponent(name, () => Apps)

@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, StyleSheet, View, StatusBar, Button } from 'react-native'
-// import SplashScreen from 'rn-splash-screen'
+import {
+  Text,
+  StyleSheet,
+  View,
+  StatusBar,
+  Button,
+  ScrollView
+} from 'react-native'
+import Swiper from './components/swiper'
+import Menu from './components/menu'
+import StopList from './components/stopList'
 import { change } from '../../../store/actionCreators'
 class Popular extends Component {
   constructor() {
@@ -16,14 +25,14 @@ class Popular extends Component {
           backgroundColor={'rgba(0,0,0,0.1)'} // 设置状态栏颜色
           animated={true} // 允许动画切换效果
         />
-        <Text>{this.props.data}</Text>
-        <Button title="更新state" onPress={this.props.changeData} />
-        <Button
-          title="获取state"
-          onPress={() => {
-            console.log(this.props.data)
-          }}
-        />
+        <ScrollView>
+          {/* 头部swiper */}
+          <Swiper />
+          {/* 菜单栏 */}
+          <Menu />
+          {/* 商品信息 */}
+          <StopList />
+        </ScrollView>
       </View>
     )
   }
