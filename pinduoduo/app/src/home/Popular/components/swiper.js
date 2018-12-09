@@ -12,7 +12,7 @@ class swiper extends Component {
           showsButtons={false}
           showsPagination={true}
           autoplay={true}
-          autoplayTimeout={2}
+          autoplayTimeout={4}
           dot={
             <View
               style={{

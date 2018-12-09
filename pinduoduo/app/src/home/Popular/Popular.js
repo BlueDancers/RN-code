@@ -6,16 +6,28 @@ import {
   View,
   StatusBar,
   Button,
-  ScrollView
+  ScrollView,
+  Dimensions
 } from 'react-native'
 import Swiper from './components/swiper'
 import Menu from './components/menu'
 import StopList from './components/stopList'
-import { change } from '../../../store/actionCreators'
+import TopButtonShow from './components/topButtonShow'
+import {
+  showchangeTopButton,
+  unShowchangeTopButton
+} from './store/actionCreators'
+
+// 获取屏幕高度
+let devHeight = Dimensions.get('window').height
+
 class Popular extends Component {
   constructor() {
     super()
     // SplashScreen.hide()
+    this.state = {
+      scrollView: null
+    }
   }
   render() {
     return (
@@ -25,16 +37,38 @@ class Popular extends Component {
           backgroundColor={'rgba(0,0,0,0.1)'} // 设置状态栏颜色
           animated={true} // 允许动画切换效果
         />
-        <ScrollView>
+        <ScrollView
+          onScroll={e => {
+            let screenHeight = e.nativeEvent.contentOffset.y
+            if (devHeight < screenHeight) {
+              this.props.showchangeTopbutton()
+            } else {
+              this.props.unShowchangeTopbutton()
+            }
+          }}
+          ref="textInputRefer"
+        >
           {/* 头部swiper */}
           <Swiper />
           {/* 菜单栏 */}
           <Menu />
           {/* 商品信息 */}
-          <StopList />
+          <StopList
+            gotoDetails={title => {
+              this.props.navigation.navigate('ProductDetails', {
+                title
+              })
+            }}
+          />
         </ScrollView>
+        {/* 返回顶部 */}
+        <TopButtonShow gotoTop={this.gotoTop} />
       </View>
     )
+  }
+  gotoTop = () => {
+    // 定位到顶部
+    this.refs.textInputRefer.scrollTo({ x: 0, y: 0, animated: true }, 1)
   }
 }
 
@@ -45,8 +79,11 @@ const mapState = state => ({
 })
 
 const mapDispatch = dispatch => ({
-  changeData() {
-    dispatch(change())
+  showchangeTopbutton() {
+    dispatch(showchangeTopButton())
+  },
+  unShowchangeTopbutton() {
+    dispatch(unShowchangeTopButton())
   }
 })
 

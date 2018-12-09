@@ -1,6 +1,7 @@
 import actionTypes from './actionTypes'
 import { fromJS } from 'immutable'
 const defaultState = fromJS({
+  isTopButton: false,
   swiper: [
     {
       img: require('../../../../public/images/Home/Popular/0c17288d4a879610343eae586fabbc70.webp')
@@ -80,57 +81,57 @@ const defaultState = fromJS({
   activityPhoto: require('../../../../public/images/Home/Popular//activityPhoto.png'),
   stopList: [
     {
-      img: require('../../../../public/images/Home/Popular/96f2dca329442071e7745f7831b7dbd1.jpg'),
-      title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
-      price: 8599,
-      num: 10000,
+      img: require('../../../../public/images/Home/Popular/54958a7298eb208b54dd4d4d0dcac55b.jpg'),
+      title: '巴拉巴拉法国正宗红酒500ml',
+      price: 99,
+      num: 1020,
       stop: 'xxxx旗舰店',
+      span: ['好喝']
+    },
+    {
+      img: require('../../../../public/images/Home/Popular/0ad6a91690c74dedf124d06e8ef51b5f.webp'),
+      title: '[富贵鸟]裤子男加绒时尚牛仔裤',
+      price: 119,
+      num: 900,
+      span: ['爱逛街', '冬季必备']
+    },
+    {
+      img: require('../../../../public/images/Home/Popular/08e1f8db7f6c9ce11f546cc05c9176ce.webp'),
+      title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
+      price: 8599,
+      num: 100000,
       span: ['智能机销量前十', '顺丰包邮']
     },
     {
-      img: require('../../../../public/images/Home/Popular/96f2dca329442071e7745f7831b7dbd1.jpg'),
+      img: require('../../../../public/images/Home/Popular/864e35ace6c3c090ec8121e05c7b0604.webp'),
       title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
       price: 8599,
       num: 10000,
       span: ['智能机销量前十', '顺丰包邮']
     },
     {
-      img: require('../../../../public/images/Home/Popular/96f2dca329442071e7745f7831b7dbd1.jpg'),
+      img: require('../../../../public/images/Home/Popular/9281dd01fa3c88cedf5164d77384c6b2.webp'),
       title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
       price: 8599,
       num: 10000,
       span: ['智能机销量前十', '顺丰包邮']
     },
     {
-      img: require('../../../../public/images/Home/Popular/96f2dca329442071e7745f7831b7dbd1.jpg'),
+      img: require('../../../../public/images/Home/Popular/994635c2294e4d5acd768d796b4cd7b6.webp'),
+      title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
+      price: 8599,
+      num: 100000,
+      span: ['智能机销量前十', '顺丰包邮']
+    },
+    {
+      img: require('../../../../public/images/Home/Popular/cce88276d606e3f3115ee26d6a380d13.webp'),
       title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
       price: 8599,
       num: 10000,
       span: ['智能机销量前十', '顺丰包邮']
     },
     {
-      img: require('../../../../public/images/Home/Popular/96f2dca329442071e7745f7831b7dbd1.jpg'),
-      title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
-      price: 8599,
-      num: 10000,
-      span: ['智能机销量前十', '顺丰包邮']
-    },
-    {
-      img: require('../../../../public/images/Home/Popular/96f2dca329442071e7745f7831b7dbd1.jpg'),
-      title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
-      price: 8599,
-      num: 10000,
-      span: ['智能机销量前十', '顺丰包邮']
-    },
-    {
-      img: require('../../../../public/images/Home/Popular/96f2dca329442071e7745f7831b7dbd1.jpg'),
-      title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
-      price: 8599,
-      num: 10000,
-      span: ['智能机销量前十', '顺丰包邮']
-    },
-    {
-      img: require('../../../../public/images/Home/Popular/96f2dca329442071e7745f7831b7dbd1.jpg'),
+      img: require('../../../../public/images/Home/Popular/deddd05761d7a5709521c690810af417.webp'),
       title: '[国行正品带票],iPhone Xs Max 全网通 苹果',
       price: 8599,
       num: 10000,
@@ -142,6 +143,10 @@ const defaultState = fromJS({
 export default (state = defaultState, action) => {
   if (action.type == actionTypes.CHANGE) {
     return state.set('data', 'change Redux!!!')
+  } else if (action.type == actionTypes.SHOWCHANGETOPBUTTON) {
+    return state.set('isTopButton', true)
+  } else if (action.type == actionTypes.UNSHOWCHANGETOPBUTTON) {
+    return state.set('isTopButton', false)
   }
   return state
 }

@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, StyleSheet, View, Dimensions, Image } from 'react-native'
+import {
+  Text,
+  StyleSheet,
+  View,
+  Dimensions,
+  Image,
+  TouchableNativeFeedback
+} from 'react-native'
 
 // 获取当前设备宽度
 let width = Dimensions.get('window').width
@@ -11,64 +18,63 @@ class stopList extends Component {
     let { stopList } = this.props
     return (
       <View>
-        {stopList.map(e => (
-          <View style={[styles.conatiner, { width: width - 10 }]}>
-            {/* 商品图片 */}
-            <View style={styles.left}>
-              <Image
-                style={styles.leftImg}
-                source={e.get('img')}
-              />
-            </View>
-            {/* 商品信息 */}
-            <View style={styles.right}>
-              {/* 商品信息标题 */}
-              <View style={styles.rightTop}>
-                <Image
-                  style={styles.icon}
-                  source={require('../../../../public/images/Home/Popular/896a52a854723aa5f4e0406d9b7149e1.png')}
-                />
-                <Text
-                  style={styles.Toptext}
-                  selectable={true}
-                  ellipsizeMode="tail"
-                  numberOfLines={2}
-                >          {e.get('title')}
-                </Text>
+        {stopList.map((e, index) => (
+          <TouchableNativeFeedback
+            key={index}
+            onPress={() => {
+              this.props.gotoDetails(e.get('title'))
+            }}
+          >
+            <View style={[styles.conatiner, { width: width - 10 }]}>
+              {/* 商品图片 */}
+              <View style={styles.left}>
+                <Image style={styles.leftImg} source={e.get('img')} />
               </View>
-              {/* 不一定有的店名 */}
-              <Text style={styles.StoreName}>{e.get('stop')}</Text>
-              {/* 商品信息 信息 */}
-              <View style={styles.rightBottom}>
-                <View style={styles.rightSpan}>
-                {
-                  e.get('span').map(span => (
-                    <Text style={styles.rightSpanText}>{span}</Text>
-                  ))
-                }
+              {/* 商品信息 */}
+              <View style={styles.right}>
+                {/* 商品信息标题 */}
+                <View style={styles.rightTop}>
+                  <Image
+                    style={styles.icon}
+                    source={require('../../../../public/images/Home/Popular/896a52a854723aa5f4e0406d9b7149e1.png')}
+                  />
+                  <Text
+                    style={styles.Toptext}
+                    selectable={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={2}
+                  >         {e.get('title')}
+                  </Text>
                 </View>
-                <View style={styles.rightPrice}>
-                  <Text style={styles.price}>${e.get('price')}</Text>
-                  {shopNum(e.get('num'))}
+                {/* 不一定有的店名 */}
+                <Text style={styles.StoreName}>{e.get('stop')}</Text>
+                {/* 商品信息 信息 */}
+                <View style={styles.rightBottom}>
+                  <View style={styles.rightSpan}>
+                    {e.get('span').map(span => (
+                      <Text key={span} style={styles.rightSpanText}>
+                        {span}
+                      </Text>
+                    ))}
+                  </View>
+                  <View style={styles.rightPrice}>
+                    <Text style={styles.price}>${e.get('price')}</Text>
+                    {shopNum(e.get('num'))}
+                  </View>
                 </View>
               </View>
             </View>
-          </View>
+          </TouchableNativeFeedback>
         ))}
       </View>
     )
-    function shopNum (num) {
-      
+    function shopNum(num) {
       if (num < 10000) {
-        return (
-          <Text>已拼{num}万件</Text>
-        )
-      } else if (num >= 10000) {
-        return (
-          <Text>已拼{(num/10000)}万件</Text>
-        )
+        return <Text>已拼{num}件</Text>
+      } else if (num >= 10000 && num < 100000) {
+        return <Text>已拼{num / 10000}万件</Text>
       } else if (num >= 100000) {
-        <Text>已拼10万+件</Text>
+        return <Text>已拼10万+件</Text>
       }
     }
   }
