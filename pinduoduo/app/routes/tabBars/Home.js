@@ -19,13 +19,13 @@ export default createMaterialTopTabNavigator(
     Store: {
       screen: Store,
       navigationOptions: {
-        tabBarLabel: '百货'
+        tabBarLabel: '列表' //'百货'
       }
     },
     Phone: {
       screen: Phone,
       navigationOptions: {
-        tabBarLabel: '手机'
+        tabBarLabel: '分列'
       }
     },
     Device: {
@@ -71,19 +71,19 @@ export default createMaterialTopTabNavigator(
     tabBarOptions: {
       scrollEnabled: true,
       upperCaseLabel: false, // 是否大写
-      activeTintColor: 'white', // 活动选项卡
-      inactiveTintColor: 'white', // "非活动" 选项卡
+      activeTintColor: 'red', // 活动选项卡
+      inactiveTintColor: 'red', // "非活动" 选项卡
       tabStyle: {
         // 选项卡样式
         width: 60,
-        paddingTop: 35,
+        // paddingTop: 35,
         paddingBottom: 4
       },
       style: {
-        backgroundColor: 'red' // 头部导航栏样式
+        backgroundColor: 'white' // 头部导航栏样式
       },
       indicatorStyle: {
-        backgroundColor: 'white' // 指示器样式
+        backgroundColor: 'red' // 指示器样式
       }
     }
   }
