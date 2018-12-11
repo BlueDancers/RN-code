@@ -5,16 +5,33 @@ import {
   View,
   FlatList,
   RefreshControl,
-  ActivityIndicator,
+  ActivityIndicator
 } from 'react-native'
 
+import response from '../../../utils/response'
+import utils from '../../../utils'
 export default class Store extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      city: ['北京', '上海', '深圳', '广州'],
+      city: [],
       isLoading: false
     }
+  }
+  componentDidMount() {
+    utils
+      .GetAxios(response.listData)
+      .then(res => {
+        console.log(res);
+        this.setState({
+          city: res.data.data
+        })
+        
+      })
+      .catch(res => {
+        // RN进行错误处理
+        console.log(res)
+      })
   }
   _renderItem = data => {
     return (
@@ -109,7 +126,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'black'
-  }, 
+  },
   itemText: {
     color: 'white',
     fontSize: 20

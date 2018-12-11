@@ -29,6 +29,13 @@ class Popular extends Component {
       scrollView: null
     }
   }
+  componentDidMount() {
+    let isOne = false
+    if(isOne) {
+      this.props.navigation.navigate('Welcome')
+    }
+    // console.log(this.props.navigation.navigate('Welcome'));
+  }
   render() {
     return (
       <View>
