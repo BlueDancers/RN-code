@@ -2,6 +2,10 @@
 
 > 仿照拼多多的一个 RNapp
 
+![](http://www.vkcyan.top/FuLs73Rn5orX4MMFU9ilFCmDift1.jpg)
+
+
+
 ### 几乎必备的插件
 
 React Navigation 3.x 顺带安装RN的图标库
