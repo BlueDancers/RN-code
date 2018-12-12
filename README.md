@@ -7,10 +7,13 @@
 React Navigation 3.x 顺带安装RN的图标库
 
 ```bash
-yarn add react-navigation
-yarn add react-native-gesture-handler
-npm install react-native-vector-icons --save
-react-native link
+yarn add react-navigation // RN导航库
+yarn add react-native-gesture-handler // RN 导航库依赖
+npm install react-native-vector-icons --save //图标库
+npm install react-navigation-material-bottom-tabs react-native-paper // 懒加载底部路由
+npm install react-native-splash-screen --save // 启动页面 解决闪屏问题
+npm install axios --save
+react-native link 
 ```
 
 > react-native link 我的理解是 将 这个库中的底层代码与android IOS系统做连接,类似于 "注册" 吧
