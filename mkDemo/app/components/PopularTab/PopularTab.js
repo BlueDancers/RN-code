@@ -55,7 +55,7 @@ export default class PopularTab extends Component {
     })
     console.log(this.props.tabLabel)
     axios.get(getUrl(this.props.tabLabel)).then(res => {
-      console.log(res)
+      // console.log(res)
       this.setState({
         text: res.data.items,
         loading: false

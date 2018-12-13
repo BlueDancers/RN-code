@@ -6,10 +6,9 @@ const HomeStack = createStackNavigator(RouerConfig, {
   headerMode: 'screen',
   defaultNavigationOptions: {
     headerStyle: {
-      backgroundColor: '#f4511e'
+      backgroundColor: '#2196f3'
     },
     headerTintColor: '#fff', // 定义导航条的字体颜色 会覆盖headerTitleStyle的颜色
-
     headerTitleStyle: {
       fontWeight: 'bold'
     }
