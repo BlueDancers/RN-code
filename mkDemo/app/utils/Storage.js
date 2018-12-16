@@ -32,9 +32,21 @@ function getAllStorageKey() {
   })
 }
 
-function setSStorage() {}
+function setStorage(key,value) {
+  return new Promise((resolve,reject) => {
+    AsyncStorage.setItem(key,value,(err) => {
+      if (!err) {
+        resolve()
+      } else {
+        reject(err)
+      }
+    })
+  })
+}
 function removeStorage() {}
 
 export default {
+  getStorage,
+  setStorage,
   getAllStorageKey
 }

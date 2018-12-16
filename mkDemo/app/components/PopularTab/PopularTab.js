@@ -37,7 +37,6 @@ export default class PopularTab extends Component {
   }
 
   renderItem = item => {
-    console.log(item)
     let { full_name, description, owner, stargazers_count } = item.item
     return (
       <Tabitem
