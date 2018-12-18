@@ -9,6 +9,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "immutable": "^4.0.0-rc.12",
+    "jcore-react-native": "^1.3.0",
+    "jpush-react-native": "^2.4.0",
     "mock": "^0.1.1",
     "react": "16.6.1",
     "react-native": "0.57.7",

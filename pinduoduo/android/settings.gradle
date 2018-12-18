@@ -1,4 +1,12 @@
 rootProject.name = 'pinduoduo'
+include ':jpush-react-native'
+project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jpush-react-native/android')
+include ':jcore-react-native'
+project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
+
+include ':jpush-react-native'
+project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jpush-react-native/android')
+
 include ':react-native-splash-screen'
 project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
 include ':react-native-vector-icons'
