@@ -2,9 +2,12 @@ package com.pinduoduo;
 
 import android.os.Bundle; // here
 import com.facebook.react.ReactActivity;
+
+import android.content.Intent;
 import org.devio.rn.splashscreen.SplashScreen; // here
 import cn.jpush.android.api.JPushInterface;
-
+import com.pinduoduo.module.ShareModule;
+import com.umeng.socialize.UMShareAPI;
 
 public class MainActivity extends ReactActivity {
 
@@ -14,9 +17,10 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SplashScreen.show(this);  // here
         super.onCreate(savedInstanceState);
+        SplashScreen.show(this);  // here
         JPushInterface.init(this);
+        ShareModule.initActivity(this);
     }
     @Override
     protected void onPause() {
@@ -31,6 +35,12 @@ public class MainActivity extends ReactActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        UMShareAPI.get(this).release();
+    }
+     @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     }
     @Override
     protected String getMainComponentName() {

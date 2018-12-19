@@ -18,6 +18,7 @@ export default class Popular extends Component {
         </StatusBar>
         <ScrollableTabView 
           renderTabBar={() => <ScrollableTabBar />}
+          locked={false}
           tabBarBackgroundColor='#2196f3'
           tabBarActiveTextColor='white'
           tabBarInactiveTextColor='mintcream'

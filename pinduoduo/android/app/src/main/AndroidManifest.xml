@@ -4,12 +4,69 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <permission android:name="${applicationId}.permission.JPUSH_MESSAGE" android:protectionLevel="signature" />
+    <!-- 分享 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 定位在分享中也有使用 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 定位  -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+      <activity
+         android:name=".wxapi.WXEntryActivity"
+         android:configChanges="keyboardHidden|orientation|screenSize"
+         android:exported="true"
+         android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+     <!-- QQ -->
+     <activity
+         android:name="com.tencent.tauth.AuthActivity"
+         android:launchMode="singleTask"
+         android:noHistory="true" >
+         <intent-filter>
+             <action android:name="android.intent.action.VIEW" />
+             <category android:name="android.intent.category.DEFAULT" />
+             <category android:name="android.intent.category.BROWSABLE" />
+             <!-- tencent + 自己的qq app id  -->
+             <data android:scheme="tencent110631169" />
+         </intent-filter>
+     </activity>
+     <activity
+         android:name="com.tencent.connect.common.AssistActivity"
+         android:theme="@android:style/Theme.Translucent.NoTitleBar"
+         android:configChanges="orientation|keyboardHidden|screenSize"/>
+     <!-- 微博 -->
+     <activity
+         android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+         android:configChanges="keyboardHidden|orientation"
+         android:theme="@android:style/Theme.Translucent.NoTitleBar"
+         android:exported="false"
+         android:screenOrientation="portrait" >
+     </activity>
+     <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+         android:configChanges="keyboardHidden|orientation"
+         android:exported="false"
+         android:windowSoftInputMode="adjustResize"
+         >
+     </activity>
+     <activity
+         android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+         android:launchMode="singleTask"
+         android:name="com.sina.weibo.sdk.share.WbShareTransActivity">
+         <intent-filter>
+             <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+             <category android:name="android.intent.category.DEFAULT" />
+         </intent-filter>
+     </activity>
+   
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
@@ -26,7 +83,10 @@
     <meta-data
         android:name="JPUSH_CHANNEL"
         android:value="${APP_CHANNEL}" />
-
+    <meta-data  
+        android:name="UMENG_APPKEY"  
+        android:value="5c19c294f1f556eed200019f" >   <!-- 改为自己申请的友盟Key  -->
+    </meta-data>  
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 

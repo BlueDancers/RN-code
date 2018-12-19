@@ -26,7 +26,7 @@ export default class PopularTab extends Component {
           }}
           refreshControl={<RefreshControl 
             refreshing={this.state.loading} // 下拉刷新状态
-            colors={['blue']} // loading颜色
+            // colors={['blue']} // loading颜色
             onRefresh={()=> { // 下拉属性的回调
               this.onload()
             }}
@@ -52,13 +52,16 @@ export default class PopularTab extends Component {
     this.setState({
       loading: true
     })
-    console.log(this.props.tabLabel)
+    console.log(getUrl(this.props.tabLabel))
     axios.get(getUrl(this.props.tabLabel)).then(res => {
-      // console.log(res)
+      console.log(res)
       this.setState({
         text: res.data.items,
         loading: false
       })
+    })
+    .catch(err => {
+      console.log(err);
     })
   }
 }
