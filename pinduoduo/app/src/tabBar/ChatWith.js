@@ -9,10 +9,10 @@ export default class ChatWith extends Component {
     super(props)
   }
   componentDidMount() {
-    JPushModule.initPush()
-    JPushModule.notifyJSDidLoad(resultCode => {
-      // console.log(resultCode) // 0 为正常
-    })
+    // JPushModule.initPush()
+    // JPushModule.notifyJSDidLoad(resultCode => {
+    //   // console.log(resultCode) // 0 为正常
+    // })
     JPushModule.getInfo(map => {
       console.log(map)
     })
@@ -82,6 +82,12 @@ export default class ChatWith extends Component {
             )
             Geolocation.start()
             // Geolocation.stop()
+          }}
+        />
+        <Button
+          title="聊天"
+          onPress={() => {
+            this.props.navigation.navigate('Livechat')
           }}
         />
       </View>

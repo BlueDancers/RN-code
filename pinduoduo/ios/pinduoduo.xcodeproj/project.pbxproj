@@ -70,6 +70,9 @@
 		4753A1C14984433597B31BB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DEE7B6E3D941E68A2205FB /* UIKit.framework */; };
 		49052543F591422EA1537E57 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9F22A413394770B26B559E /* libresolv.tbd */; };
 		64A9386A93C147808174026D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE48721B41747D9A043CDD8 /* CoreGraphics.framework */; };
+		F8F80EFA8A9A4449A26B2A1E /* libAuroraIMUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E800571250E84CC19B2E4254 /* libAuroraIMUI.a */; };
+		7F7BCA0C3FE84C528F8DA5E2 /* RCTAuroraIMUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F48E53052124F43BDB8067C /* RCTAuroraIMUI.framework */; };
+		CEE5C45076BB4342832DC06A /* RCTAuroraIMUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 6F1BAC70D7044D998B5E3BAF /* RCTAuroraIMUITests.xctest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -414,6 +417,10 @@
 		E2DEE7B6E3D941E68A2205FB /* UIKit.framework */ = {isa = PBXFileReference; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		BB9F22A413394770B26B559E /* libresolv.tbd */ = {isa = PBXFileReference; name = "libresolv.tbd"; path = "usr/lib/libresolv.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 		0BE48721B41747D9A043CDD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		68691CA81BFB49ECAE507F81 /* RCTAuroraIMUI.xcodeproj */ = {isa = PBXFileReference; name = "RCTAuroraIMUI.xcodeproj"; path = "../node_modules/aurora-imui-react-native/ReactNative/ios/RCTAuroraIMUI.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		E800571250E84CC19B2E4254 /* libAuroraIMUI.a */ = {isa = PBXFileReference; name = "libAuroraIMUI.a"; path = "libAuroraIMUI.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		1F48E53052124F43BDB8067C /* RCTAuroraIMUI.framework */ = {isa = PBXFileReference; name = "RCTAuroraIMUI.framework"; path = "System/Library/Frameworks/RCTAuroraIMUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		6F1BAC70D7044D998B5E3BAF /* RCTAuroraIMUITests.xctest */ = {isa = PBXFileReference; name = "RCTAuroraIMUITests.xctest"; path = "RCTAuroraIMUITests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +465,9 @@
 				4753A1C14984433597B31BB2 /* UIKit.framework in Frameworks */,
 				49052543F591422EA1537E57 /* libresolv.tbd in Frameworks */,
 				64A9386A93C147808174026D /* CoreGraphics.framework in Frameworks */,
+				F8F80EFA8A9A4449A26B2A1E /* libAuroraIMUI.a in Frameworks */,
+				7F7BCA0C3FE84C528F8DA5E2 /* RCTAuroraIMUI.framework in Frameworks */,
+				CEE5C45076BB4342832DC06A /* RCTAuroraIMUITests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +672,7 @@
 				32A8DD2615424E3FA944B140 /* SplashScreen.xcodeproj */,
 				E03688EE9E0841F0A26D3268 /* RCTJCoreModule.xcodeproj */,
 				6CD171E3C4A345C09FF3E99F /* RCTJPushModule.xcodeproj */,
+				68691CA81BFB49ECAE507F81 /* RCTAuroraIMUI.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1335,6 +1346,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1344,6 +1358,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
 					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 			};
 			name = Debug;
@@ -1372,6 +1387,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1381,6 +1399,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
 					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 			};
 			name = Release;
@@ -1409,6 +1428,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
 					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 			};
 			name = Debug;
@@ -1436,6 +1456,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
 					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 			};
 			name = Release;
@@ -1472,6 +1493,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1481,6 +1505,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
 					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 			};
 			name = Debug;
@@ -1517,6 +1542,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1526,6 +1554,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
 					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 			};
 			name = Release;
@@ -1561,6 +1590,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1570,6 +1602,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
 					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 			};
 			name = Debug;
@@ -1605,6 +1638,9 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1614,6 +1650,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 					"$(SRCROOT)\..\node_modules\jcore-react-native\ios\RCTJCoreModule",
 					"$(SRCROOT)\..\node_modules\jpush-react-native\ios\RCTJPushModule",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 			};
 			name = Release;

@@ -17,7 +17,7 @@ import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.Config;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.PlatformConfig;
-
+import cn.jiguang.imui.messagelist.ReactIMUIPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactIMUIPackage(),
             new AMapGeolocationPackage(),
             new SharePackage(),
             new JPushPackage(!BuildConfig.DEBUG, !BuildConfig.DEBUG),

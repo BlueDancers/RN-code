@@ -152,6 +152,7 @@ android {
 }
 
 dependencies {
+    compile project(':aurora-imui-react-native')
     compile project(':react-native-amap-geolocation')
     compile project(':jpush-react-native')
     implementation project(':jcore-react-native')

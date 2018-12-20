@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pinduoduo">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.pinduoduo">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
@@ -16,6 +17,7 @@
     <!-- 定位  -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
+      tools:replace="android:allowBackup"
       android:name=".MainApplication"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
