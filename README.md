@@ -39,7 +39,31 @@ react-native link
 
 
 
+### 定位服务
 
+感觉定位插件,选择很多样,我也是没怎么挑选,使用了[react-native-amap-geolocatio](https://github.com/qiuxiang/react-native-amap-geolocation)
+
+
+
+### 第三方集成
+
+> 例如 分享到 qq 微信 朋友圈 以及第三方登录等等
+
+使用**友盟**完成的第三方集成[react-native-share](https://github.com/songxiaoliang/react-native-share)
+
+
+
+### 消息推送
+
+消息推送使用的是 **极光推送** [jpush-react-native](https://github.com/jpush/jpush-react-native)
+
+
+
+### IM聊天
+
+[react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat)
+
+[aurora-imui](https://github.com/jpush/aurora-imui/blob/master/README_zh.md) 2选一
 
 
 
@@ -48,4 +72,6 @@ react-native link
 [RN配置沉浸式状态栏]()
 
 [React-Native项目中使用Redux](https://www.cnblogs.com/wuvkcyan/p/10081874.html)
+
+[React-Native使用极光进行消息推送](https://github.com/vkcyan/text/blob/master/react/React-Native%E4%BD%BF%E7%94%A8%E6%9E%81%E5%85%89%E8%BF%9B%E8%A1%8C%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.md)
 
