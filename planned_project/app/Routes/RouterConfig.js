@@ -10,7 +10,8 @@ export default {
   Registry: {
     screen: Registry,
     navigationOptions: () => ({
-      title: '注册'
+      header: null
+      // title: '设置'
     })
   }
 }

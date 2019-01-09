@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View, Button } from 'react-native'
-import Storage from '../../../Utils/Storage'
+import { Text, View, Button, StatusBar } from 'react-native'
+import TabHeader from '../../../Components/TabHeader'
 export default class My extends Component {
-
+  constructor(props) {
+    super(props)
+  }
   render() {
-    Storage.getStorage('androidHeight').then(res => {
-      console.log(res);
-    })
-    .catch(res => {
-      console.log(res);
-    })
     return (
       <View>
         <Text> My </Text>

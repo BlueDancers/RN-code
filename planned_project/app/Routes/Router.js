@@ -2,7 +2,8 @@ import { createStackNavigator, createAppContainer } from 'react-navigation'
 import RouterConfig from './RouterConfig'
 
 const HomeStack = createStackNavigator(RouterConfig, {
-  mode: 'card',
+  // initialRouteName: 'Registry',
+  mode: 'modal',
   headerMode: 'screen',   // none 隐藏上标签栏  | float 苹果默认效果 | screen 安卓默认效果
   defaultNavigationOptions: {
     gesturesEnabled: true,

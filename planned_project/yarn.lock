@@ -658,6 +658,11 @@
     hoist-non-react-statics "^2.5.0"
     prop-types "^15.6.0"
 
+"@popmotion/easing@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@popmotion/easing/-/easing-1.0.1.tgz#48336aea29542113df10aeb81b4fd10f0b95f937"
+  integrity sha512-NbIEz9mZAem0F0sjg2v57LbU9Y2Xc50QEX434jYrwEQzXJuJipyUV48Qz4hjHqbB/8xiUj0JMQfRvP8K9nUbxg==
+
 "@react-navigation/core@3.0.2":
   version "3.0.2"
   resolved "https://registry.npmjs.org/@react-navigation/core/-/core-3.0.2.tgz#8631801533a27d034a3b8421dfd0510a9f27dcf3"
@@ -679,6 +684,16 @@
     react-native-gesture-handler "^1.0.0"
     react-native-safe-area-view "^0.11.0"
     react-native-screens "^1.0.0 || ^1.0.0-alpha"
+
+"@types/invariant@^2.2.29":
+  version "2.2.29"
+  resolved "https://registry.npmjs.org/@types/invariant/-/invariant-2.2.29.tgz#aa845204cd0a289f65d47e0de63a6a815e30cc66"
+  integrity sha512-lRVw09gOvgviOfeUrKc/pmTiRZ7g7oDOU6OAutyuSHpm1/o2RaBQvRhgK8QEdu+FFuw/wnWb29A/iuxv9i8OpQ==
+
+"@types/node@^10.0.5":
+  version "10.12.18"
+  resolved "https://registry.npmjs.org/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
+  integrity sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
 
 abab@^2.0.0:
   version "2.0.0"
@@ -735,6 +750,15 @@ ajv@^6.5.5:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
+
+animated-pose@^1.0.0, animated-pose@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/animated-pose/-/animated-pose-1.2.1.tgz#63ee9d2af7c6b1d74e136646312c8b88f346f2b7"
+  integrity sha512-WIRPDuEnss19NUrc/t2aP+SV59Qv9csjyFTwgnShzruL+35YjLKDW0X01EVKeqpDwUO8lAg/JgT6lNXxjYI/aw==
+  dependencies:
+    "@popmotion/easing" "^1.0.1"
+    hey-listen "^1.0.5"
+    pose-core "^2.0.0"
 
 ansi-colors@^1.0.1:
   version "1.1.0"
@@ -2543,6 +2567,11 @@ has@^1.0.1, has@^1.0.3:
   integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   dependencies:
     function-bind "^1.1.1"
+
+hey-listen@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/hey-listen/-/hey-listen-1.0.5.tgz#6d0a3a2f60177f65bc4404d571a00025bf5dc20e"
+  integrity sha512-O2iCNxBBGb4hOxL9tUdnoPwDYmZhQ29t5xKV74BVZNdvwCDXCpVYTJ4yoaibc1V0I8Yw3K3nwmvDpoyjnCqUaw==
 
 hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
@@ -4617,6 +4646,16 @@ pn@^1.1.0:
   resolved "https://registry.npmjs.org/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
   integrity sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
 
+pose-core@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/pose-core/-/pose-core-2.0.2.tgz#6a0bd1e7218e4bf30be9c26a30be8eeb5b8695df"
+  integrity sha512-NWR8SELdQ+zhG+xD6nHDCdX/tu3fKAFUQ61hJdBic/7WSy/ABYfqpdQIsepBxPWQhHc8WLgPhRal831K/cWrwA==
+  dependencies:
+    "@types/invariant" "^2.2.29"
+    "@types/node" "^10.0.5"
+    hey-listen "^1.0.5"
+    tslib "^1.9.1"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -4788,6 +4827,14 @@ react-native-paper@^2.4.0:
     hoist-non-react-statics "^3.1.0"
     react-lifecycles-compat "^3.0.4"
 
+react-native-pose@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.npmjs.org/react-native-pose/-/react-native-pose-0.9.0.tgz#890be7da8853c89e22ee078922375ab8a04590c4"
+  integrity sha512-zpWf/p44W7+oJD1+Ku9wb21DCtTSmuBfLut6GBi/L3Ik1kYrEgC91Yg211/jqnhpp5PaI+kqP/GvBqhPJgtKFQ==
+  dependencies:
+    animated-pose "^1.2.0"
+    react-pose-core "^0.5.0"
+
 react-native-safe-area-view@^0.11.0:
   version "0.11.0"
   resolved "https://registry.npmjs.org/react-native-safe-area-view/-/react-native-safe-area-view-0.11.0.tgz#4f3dda43c2bace37965e7c6aef5fc83d4f19d174"
@@ -4925,6 +4972,14 @@ react-navigation@^3.0.9:
     react-navigation-drawer "1.0.5"
     react-navigation-stack "1.0.6"
     react-navigation-tabs "1.0.2"
+
+react-pose-core@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/react-pose-core/-/react-pose-core-0.5.0.tgz#1f362cae5eb6331f430cde75c662879017681da3"
+  integrity sha512-vzpeO0G47gDBxTQ2DZMKIbbz3BdEPT6dr3LoaxyZQWaPMBqYNY2hdi0cRLqqy5EWmvqorLY/vl/q3arNGBmUeg==
+  dependencies:
+    animated-pose "^1.0.0"
+    hey-listen "^1.0.5"
 
 react-proxy@^1.1.7:
   version "1.1.8"
@@ -5836,6 +5891,11 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
+
+tslib@^1.9.1:
+  version "1.9.3"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
+  integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
 tunnel-agent@^0.6.0:
   version "0.6.0"
