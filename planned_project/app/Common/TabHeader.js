@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet,Image,TouchableOpacity } from 'react-native'
-import Storage from '../Utils/Storage'
-import { withNavigation } from 'react-navigation';
+import { withNavigation } from 'react-navigation'
 
-const TabHeaderTextPaddingTop = 11
-const TabHeaderTextPaddingButtom = 11
+import { backIcon } from './Image'
+import Storage from '../Utils/Storage'
+
+
+const TabHeaderTextPaddingTop = 11 // 字上方间距
+const TabHeaderTextPaddingButtom = 11 // 字下方间距
 
 
 class TabHeader extends Component {
@@ -39,7 +42,7 @@ class TabHeader extends Component {
       >
         <Text style={Style.HeaderText}>{text}</Text>
         <TouchableOpacity style={[Style.LeftButtom,{top: this.state.TabHeight + TabHeaderTextPaddingTop-7}]} onPress={this.gotoBack}>
-          <Image style={Style.LeftImage} source={require('../Image/back.png')}></Image>
+          <Image style={Style.LeftImage} source={backIcon}></Image>
         </TouchableOpacity>
       </View>
     )
